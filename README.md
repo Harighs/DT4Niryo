@@ -1,5 +1,5 @@
 # DigitalTwin_for_Cyber_Physical_Systems_with_Niryo
-This repository is to compare the data logs from digital twin platform to real robo
+This repository is to compare the data logs from digital twin platform to real robot
 
 # Physical Twin
 - Niryo Ned robot
