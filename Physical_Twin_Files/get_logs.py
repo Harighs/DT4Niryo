@@ -3,6 +3,20 @@ import sys
 import rospy
 import time
 from datetime import datetime
+import argparse
+import os
+
+
+# Parsing command line arguments for scenario and iteration
+parser = argparse.ArgumentParser(description='Choose a scenario and iteration for the robot movement.')
+parser.add_argument('scenario', type=int, choices=range(1, 6),
+                    help='an integer for the scenario (1-5)')
+parser.add_argument('iteration', type=int, help='an integer for the iteration')
+args = parser.parse_args()
+scenario = args.scenario
+iteration = args.iteration
+
+
 
 rospy.init_node('niryo_blockly_interpreted_code2')
 n = NiryoRosWrapper()
@@ -15,7 +29,13 @@ t1 = datetime.now()
 def is_moved(current, previous, tolerance):
     return any(abs(c - p) > tolerance for c, p in zip(current, previous))
 
-log_file = 'scenario_4_run_2.txt'  # name of the log file
+log_file = "scenario_{scenario}_iteration_{iteration}.txt".format(scenario=scenario, iteration=iteration)
+
+if os.path.exists(log_file):
+    os.remove(log_file)
+    print('Existing file is deleted')
+else:
+    pass
 
 try:
     while not rospy.is_shutdown():
