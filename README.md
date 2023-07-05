@@ -36,9 +36,17 @@ scenarios = [
 ```
 
 # Digital Twin
+### Requirements:
 - Webots 2023a https://github.com/cyberbotics/webots/releases/tag/R2023a
 - URDF model of Niryo Ned robot
 - urdf and .py under `Digital_Twin_File/` folder
+
+### Steps:
+1. Open Webots and load the `Niryo_Ned.wbt` file or else create new Niryo Ned robot and load the `Niryo_Ned.urdf` file.
+2. Load the `webots_ned_controll.py` under `Digital_Twin_Files`.
+3. And run the `webots_ned_controll.py` file.
+4. Logs will be automatically saved in current dir with name `scenario1_run_1.txt` format.
+
 
 # Target Position
 
@@ -64,3 +72,11 @@ eg:
 '''[-0.0, -0.0, 0.0, 0.0, -0.0, 0.0] 56.456'''
 explains
 position of motor m1, m2, m3, m4, m5, m6 and at end 56.45 represents the 'Time difference' between previous logging line
+
+### Some Comparisions:
+
+#### Scenario 1 PT vs DT
+![Alt Text](assets/scenario1_pt_vs_dt.png)
+
+#### Scenario 3 PT vs DT
+![Alt Text](assets/scenario3_pt_vs_dt.png)
