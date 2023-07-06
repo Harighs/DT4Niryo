@@ -118,12 +118,12 @@ def move_to_position(lis, file):
         file.write(str([round(num, 3) for num in position]) + " " + str((t2 - t1).microseconds / 1000) + "\n")
 
         t1 = t2
-        m1.setVelocity(0.8)
-        m2.setVelocity(0.8)
-        m3.setVelocity(0.8)
-        m4.setVelocity(0.8)
-        m5.setVelocity(0.8)
-        m6.setVelocity(0.8)
+        m1.setVelocity(0.45)
+        m2.setVelocity(0.45)
+        m3.setVelocity(0.45)
+        m4.setVelocity(0.45)
+        m5.setVelocity(0.45)
+        m6.setVelocity(0.45)
         if (m1_pos.getValue() <= a1 + 0.01 and m1_pos.getValue() >= a1 - 0.01) and (m2_pos.getValue() <= -a2 + 0.01 and m2_pos.getValue() >= -a2 - 0.01) and (m3_pos.getValue() <= a3 + 0.01 and m3_pos.getValue() >= a3 - 0.01) and (m4_pos.getValue() <= a4 + 0.01 and m4_pos.getValue() >= a4 - 0.01) and (m5_pos.getValue() <= a5 + 0.01 and m5_pos.getValue() >= a5 - 0.01) and (m6_pos.getValue() <= a6 + 0.01 and m6_pos.getValue() >= a6 - 0.01):
             break
         
